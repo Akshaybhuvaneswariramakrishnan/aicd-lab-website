@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI for Clinical Deployment Lab | Georgia State University</title>
+    <title>Laboratory of Neural and Somatic Computing (LNSC) | Georgia Southern University</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -12,8 +12,8 @@
             theme: {
                 extend: {
                     colors: {
-                        gsuBlue: '#0039A6',
-                        gsuRed: '#CC0000',
+                        gsuNavy: '#041E42', /* True Georgia Southern Navy */
+                        gsuGold: '#A89968', /* True Georgia Southern Gold */
                     },
                     fontFamily: {
                         sans: ['Inter', 'system-ui', 'sans-serif'],
@@ -28,29 +28,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
+        .pub-badge { @apply text-xs font-bold uppercase py-1 px-3 rounded inline-block mb-2; }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800 antialiased selection:bg-gsuRed selection:text-white">
+<body class="bg-gray-50 text-gray-800 antialiased selection:bg-gsuGold selection:text-gsuNavy">
 
-    <nav class="bg-gsuBlue text-white sticky top-0 z-50 shadow-md">
+    <nav class="bg-gsuNavy text-white sticky top-0 z-50 shadow-md border-b-4 border-gsuGold">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
-                    <a href="#home" class="flex-shrink-0 flex items-center font-bold text-xl tracking-wide hover:text-gray-200 transition">
-                        <i class="fa-solid fa-brain mr-2 text-gsuRed"></i> AICD Lab
+                    <a href="#home" class="flex-shrink-0 flex items-center font-bold text-xl tracking-wide hover:text-gsuGold transition">
+                        <i class="fa-solid fa-network-wired mr-2 text-gsuGold"></i> LNSC Lab
                     </a>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#home" class="hover:text-gsuRed transition font-semibold text-sm uppercase tracking-wider">Home</a>
-                    <a href="#people" class="hover:text-gsuRed transition font-semibold text-sm uppercase tracking-wider">People</a>
-                    <a href="#projects" class="hover:text-gsuRed transition font-semibold text-sm uppercase tracking-wider">Projects</a>
-                    <a href="#publications" class="hover:text-gsuRed transition font-semibold text-sm uppercase tracking-wider">Publications</a>
-                    <a href="#funding" class="hover:text-gsuRed transition font-semibold text-sm uppercase tracking-wider">Funding</a>
-                </div>
-                <div class="md:hidden flex items-center">
-                    <button class="text-white hover:text-gsuRed focus:outline-none">
-                        <i class="fa-solid fa-bars text-2xl"></i>
-                    </button>
+                    <a href="#home" class="hover:text-gsuGold transition font-semibold text-sm uppercase tracking-wider">Home</a>
+                    <a href="#people" class="hover:text-gsuGold transition font-semibold text-sm uppercase tracking-wider">People</a>
+                    <a href="#research" class="hover:text-gsuGold transition font-semibold text-sm uppercase tracking-wider">Research</a>
+                    <a href="#publications" class="hover:text-gsuGold transition font-semibold text-sm uppercase tracking-wider">Publications</a>
+                    <a href="#funding" class="hover:text-gsuGold transition font-semibold text-sm uppercase tracking-wider">Funding</a>
                 </div>
             </div>
         </div>
@@ -58,63 +54,84 @@
 
     <section id="home" class="pt-24 pb-16 bg-white border-b border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-4xl md:text-5xl font-extrabold text-gsuBlue mb-4">
-                AI for Clinical Deployment Lab
+            <h2 class="text-gsuGold font-bold tracking-widest uppercase mb-2">Georgia Southern University</h2>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-gsuNavy mb-4">
+                Laboratory of Neural and Somatic Computing (LNSC)
             </h1>
             <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-3xl mx-auto font-light">
-                Bridging the gap between cutting-edge artificial intelligence theory and practical, real-world clinical bedside deployment.
+                Advancing the frontier of explainable, privacy-preserving, and generalizable artificial intelligence from black-box theory to clinical bedside deployment.
             </p>
             
-            <div class="bg-gsuBlue text-white rounded-xl shadow-xl p-8 max-w-4xl mx-auto border-t-4 border-gsuRed transform hover:-translate-y-1 transition duration-300">
+            <div class="bg-gsuNavy text-white rounded-xl shadow-xl p-8 max-w-4xl mx-auto border-t-4 border-gsuGold transform hover:-translate-y-1 transition duration-300">
                 <h2 class="text-2xl font-bold mb-3 flex items-center justify-center">
-                    <i class="fa-solid fa-bullseye mr-3 text-gsuRed"></i> Our Mission
+                    <i class="fa-solid fa-microscope mr-3 text-gsuGold"></i> Our Mission
                 </h2>
                 <p class="text-lg italic font-light">
-                    "Developing equitable, interpretable, and privacy-aware machine learning frameworks to transform healthcare delivery."
+                    "Developing equitable, interpretable, and biologically-informed machine learning frameworks to transform healthcare delivery and somatic analysis."
                 </p>
             </div>
         </div>
     </section>
 
     <section id="people" class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gsuBlue uppercase tracking-wide">Our People</h2>
-                <div class="h-1 w-20 bg-gsuRed mx-auto mt-4 rounded"></div>
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gsuNavy uppercase tracking-wide">Our People</h2>
+                <div class="h-1 w-20 bg-gsuGold mx-auto mt-4 rounded"></div>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col md:flex-row border-l-4 border-gsuBlue hover:shadow-xl transition">
-                    <div class="md:w-1/3 bg-gray-200 h-48 md:h-auto flex items-center justify-center text-gray-400">
-                        <i class="fa-solid fa-user-tie text-5xl"></i>
-                    </div>
-                    <div class="p-6 md:w-2/3">
-                        <h3 class="text-xl font-bold text-gray-900">Dr. Meenalosini Vimal Cruz</h3>
-                        <p class="text-gsuRed font-semibold text-sm mb-3">Principal Investigator (PI)</p>
-                        <p class="text-gray-600 text-sm mb-4">
-                            Dr. Cruz directs the AICD Lab, focusing on translational AI in medicine. Her research explores interpretable deep learning architectures and equitable clinical decision support systems.
-                        </p>
-                        <div class="flex space-x-4">
-                            <a href="#" class="text-gray-400 hover:text-gsuBlue transition"><i class="fa-brands fa-linkedin text-xl"></i></a>
-                            <a href="#" class="text-gray-400 hover:text-gsuBlue transition"><i class="fa-solid fa-envelope text-xl"></i></a>
-                            <a href="#" class="text-gray-400 hover:text-gsuBlue transition"><i class="fa-brands fa-google text-xl"></i></a>
+            <div class="space-y-12">
+                <div class="bg-white rounded-xl shadow-lg border-l-4 border-gsuNavy p-8">
+                    <h3 class="text-2xl font-bold text-gsuNavy mb-6 border-b border-gray-100 pb-4 uppercase tracking-wide">
+                        <i class="fa-solid fa-user-tie text-gsuGold mr-2"></i> Principal Investigator
+                    </h3>
+                    <div class="flex flex-col md:flex-row gap-8 items-start">
+                        <div class="md:w-1/3 flex flex-col items-center text-center">
+                            <div class="w-48 h-48 bg-gray-200 rounded-full flex items-center justify-center text-gray-400 mb-4 overflow-hidden border-4 border-gray-100 shadow-inner">
+                                <i class="fa-solid fa-user text-6xl"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-900">Dr. Meenalosini Vimal Cruz</h4>
+                            <p class="text-gsuGold font-semibold text-sm mb-3">Lab Director</p>
+                            <div class="flex space-x-3 mt-2">
+                                <a href="#" class="text-gray-400 hover:text-gsuNavy transition"><i class="fa-solid fa-envelope"></i></a>
+                                <a href="#" class="text-gray-400 hover:text-gsuNavy transition"><i class="fa-brands fa-linkedin"></i></a>
+                                <a href="#" class="text-gray-400 hover:text-gsuNavy transition"><i class="fa-solid fa-graduation-cap"></i></a>
+                            </div>
+                        </div>
+                        <div class="md:w-2/3 text-gray-700 leading-relaxed">
+                            <p class="mb-4">
+                                Dr. Cruz directs the Laboratory of Neural and Somatic Computing (LNSC), focusing on translational AI in medicine. Her research explores interpretable deep learning architectures, multimodal emotion recognition, and equitable clinical decision support systems. 
+                            </p>
+                            <p>
+                                She leads multiple high-impact projects bridging neurodevelopmental informatics with integrative oncology, prioritizing frameworks that offer real-world transparency and trust for clinical practitioners.
+                            </p>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col md:flex-row border-l-4 border-gsuBlue hover:shadow-xl transition">
-                    <div class="md:w-1/3 bg-gray-200 h-48 md:h-auto flex items-center justify-center text-gray-400">
-                        <i class="fa-solid fa-robot text-5xl"></i>
-                    </div>
-                    <div class="p-6 md:w-2/3">
-                        <h3 class="text-xl font-bold text-gray-900">Gemini</h3>
-                        <p class="text-gsuRed font-semibold text-sm mb-3">Co-PI & Lead AI Engineer</p>
-                        <p class="text-gray-600 text-sm mb-4">
-                            Specializing in scalable machine learning architectures, data pipelines, and computational modeling to ensure robust clinical deployment of our AI frameworks.
-                        </p>
-                        <div class="flex space-x-4">
-                            <a href="#" class="text-gray-400 hover:text-gsuBlue transition"><i class="fa-brands fa-github text-xl"></i></a>
-                            <a href="#" class="text-gray-400 hover:text-gsuBlue transition"><i class="fa-solid fa-globe text-xl"></i></a>
+                <div class="bg-white rounded-xl shadow-lg border-l-4 border-gsuNavy p-8">
+                    <h3 class="text-2xl font-bold text-gsuNavy mb-6 border-b border-gray-100 pb-4 uppercase tracking-wide">
+                        <i class="fa-solid fa-laptop-code text-gsuGold mr-2"></i> Co-Principal Investigator
+                    </h3>
+                    <div class="flex flex-col md:flex-row gap-8 items-start">
+                        <div class="md:w-1/3 flex flex-col items-center text-center">
+                            <div class="w-48 h-48 bg-gray-200 rounded-full flex items-center justify-center text-gray-400 mb-4 overflow-hidden border-4 border-gray-100 shadow-inner">
+                                <i class="fa-solid fa-user text-6xl"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-900">Akshay Bhuvaneswari Ramakrishnan</h4>
+                            <p class="text-gsuGold font-semibold text-sm mb-3">AI Engineer & Researcher</p>
+                            <div class="flex space-x-3 mt-2">
+                                <a href="#" class="text-gray-400 hover:text-gsuNavy transition"><i class="fa-brands fa-github"></i></a>
+                                <a href="#" class="text-gray-400 hover:text-gsuNavy transition"><i class="fa-brands fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="md:w-2/3 text-gray-700 leading-relaxed">
+                            <p class="mb-4">
+                                Akshay specializes in machine learning, data engineering, and medical artificial intelligence applications. He focuses on the architectural design of complex deep learning systems, including the integration of classical signal processing with self-supervised learning.
+                            </p>
+                            <p>
+                                His recent work drives the technical development of ocular disease recognition frameworks, advanced survival modeling in integrative oncology, and the optimization of training pipelines for deployment in resource-limited clinical environments.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -122,96 +139,114 @@
         </div>
     </section>
 
-    <section id="projects" class="py-20 bg-white">
+    <section id="research" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gsuBlue uppercase tracking-wide">Research Projects</h2>
-                <div class="h-1 w-20 bg-gsuRed mx-auto mt-4 rounded"></div>
+                <h2 class="text-3xl font-bold text-gsuNavy uppercase tracking-wide">Research Roadmap (2024–2029)</h2>
+                <div class="h-1 w-20 bg-gsuGold mx-auto mt-4 rounded"></div>
             </div>
 
-            <h3 class="text-2xl font-semibold text-gray-800 mb-6 flex items-center"><i class="fa-solid fa-spinner fa-spin-pulse mr-3 text-gsuRed"></i> Current Initiatives</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-                <div class="bg-gray-50 border border-gray-100 rounded-lg p-6 shadow-md hover:-translate-y-1 transition duration-300">
-                    <div class="bg-gsuBlue text-white text-xs font-bold uppercase py-1 px-3 rounded inline-block mb-3">Active</div>
-                    <h4 class="text-xl font-bold text-gsuBlue mb-2">Reti-Net 360</h4>
-                    <p class="text-gray-700 text-sm mb-4">A comprehensive AI framework for automated ocular disease detection using multimodal retinal imaging, prioritizing edge-device deployment for resource-limited clinics.</p>
-                </div>
-                
-                <div class="bg-gray-50 border border-gray-100 rounded-lg p-6 shadow-md hover:-translate-y-1 transition duration-300">
-                    <div class="bg-gsuBlue text-white text-xs font-bold uppercase py-1 px-3 rounded inline-block mb-3">Active</div>
-                    <h4 class="text-xl font-bold text-gsuBlue mb-2">Neurodevelopmental Informatics</h4>
-                    <p class="text-gray-700 text-sm mb-4">Fusing EEG temporal data with spatial facial phenotyping to create early-warning predictive models for neurodevelopmental delays in pediatric populations.</p>
-                </div>
-            </div>
-
-            <h3 class="text-2xl font-semibold text-gray-800 mb-6 flex items-center"><i class="fa-solid fa-check-circle mr-3 text-gray-400"></i> Past Research</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-gray-50 border border-gray-100 rounded-lg p-6 shadow-sm opacity-90">
-                    <div class="bg-gray-400 text-white text-xs font-bold uppercase py-1 px-3 rounded inline-block mb-3">Completed</div>
-                    <h4 class="text-xl font-bold text-gray-700 mb-2">Integrative Oncology</h4>
-                    <p class="text-gray-600 text-sm">Developed survival modeling architectures predicting outcomes for Cirrhosis and Lung Cancer patients using integrative multi-omics and EHR datasets.</p>
+                <div class="bg-gray-50 border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition">
+                    <h3 class="text-xl font-bold text-gsuNavy mb-3"><i class="fa-solid fa-eye text-gsuGold mr-2"></i> Ocular Disease & Retinal AI</h3>
+                    <p class="text-sm text-gray-600 mb-4">Comprehensive analysis of representation learning for retinal imaging. Development of a hybrid architecture that trains specialist backbones prior to architectural fusion, surpassing current baseline SOTA models.</p>
+                    <ul class="text-sm text-gray-700 space-y-2 list-disc list-inside">
+                        <li>Representation Learning in Retinal Image Signal Analysis</li>
+                        <li>Demographic Adaptability and Privacy via Federated Learning & LLMs</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gray-50 border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition">
+                    <h3 class="text-xl font-bold text-gsuNavy mb-3"><i class="fa-solid fa-lungs-virus text-gsuGold mr-2"></i> Integrative Oncology</h3>
+                    <p class="text-sm text-gray-600 mb-4">Modeling survival and progression based on metabolic biomarker data (CRP, LDH, Ferritin) and integrating stress/QOL data into prognostic AI frameworks using ML-based survival modeling.</p>
+                    <ul class="text-sm text-gray-700 space-y-2 list-disc list-inside">
+                        <li>Cancer Prognostics via Metabolic Biomarkers</li>
+                        <li>Psychological & Quality of Life Factor Integration</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gray-50 border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition">
+                    <h3 class="text-xl font-bold text-gsuNavy mb-3"><i class="fa-solid fa-brain text-gsuGold mr-2"></i> Neurodevelopmental Informatics</h3>
+                    <p class="text-sm text-gray-600 mb-4">Synthesizing EEG signatures (U-shaped spectral profile in ASD, TBR in ADHD) and multimodal emotion recognition via EEG and facial expressions for affective computing.</p>
+                    <ul class="text-sm text-gray-700 space-y-2 list-disc list-inside">
+                        <li>Neurophysiological EEG Signatures in ASD and ADHD</li>
+                        <li>Multimodal Emotion Recognition Pipeline Design</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gray-50 border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition">
+                    <h3 class="text-xl font-bold text-gsuNavy mb-3"><i class="fa-solid fa-leaf text-gsuGold mr-2"></i> Agricultural & Edge AI</h3>
+                    <p class="text-sm text-gray-600 mb-4">Deploying explainable AI for practical, rapid-result applications in non-clinical domains to maximize commercial and societal benefits.</p>
+                    <ul class="text-sm text-gray-700 space-y-2 list-disc list-inside">
+                        <li>PestXNet: Explainable Multi-Task Framework</li>
+                        <li>Quantum Tuned Hybrid CNN-SVMs</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="publications" class="py-20 bg-gray-50">
+    <section id="publications" class="py-20 bg-gray-50 border-t border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gsuBlue uppercase tracking-wide">Publications</h2>
-                <div class="h-1 w-20 bg-gsuRed mx-auto mt-4 rounded"></div>
+                <h2 class="text-3xl font-bold text-gsuNavy uppercase tracking-wide">Publications</h2>
+                <div class="h-1 w-20 bg-gsuGold mx-auto mt-4 rounded"></div>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-                <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-gsuBlue">
-                    <h3 class="text-xl font-bold text-gray-900 mb-6 flex items-center">
-                        <i class="fa-solid fa-book-open mr-3 text-gsuBlue"></i> Published & Accepted
-                    </h3>
-                    <ul class="space-y-4">
-                        <li class="flex items-start">
-                            <i class="fa-solid fa-file-lines text-gsuRed mt-1 mr-3"></i>
-                            <div>
-                                <p class="text-sm font-semibold text-gray-800">[Placeholder Title: Advanced ML in Diagnostics]</p>
-                                <p class="text-xs text-gray-500">Cruz, M.V., et al. <span class="italic text-gsuBlue">Computers in Biology and Medicine (CIBM)</span>, 2024.</p>
-                            </div>
+            <div class="space-y-8">
+                <div class="bg-white rounded-xl shadow p-8 border-l-4 border-green-600">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 border-b pb-2">Published</h3>
+                    <div class="mb-4">
+                        <h4 class="font-bold text-gsuNavy">A Unified Framework for Chest CT Image Classification: Benchmarking Pre-Trained Architectures with Lightweight and Deep Models</h4>
+                        <p class="text-sm text-gray-600 italic mb-1">2025 6th International Conference on Artificial Intelligence, Robotics and Control (AIRC) | May 2025</p>
+                        <p class="text-sm text-gray-700"><span class="font-semibold text-gsuGold">Clinical Innovation:</span> Utilizes Grad-CAM for visual interpretability, allowing clinicians to see specific regions driving lung cancer classification.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow p-8 border-l-4 border-blue-600">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 border-b pb-2">Accepted & In Production</h3>
+                    <ul class="space-y-6">
+                        <li>
+                            <h4 class="font-bold text-gsuNavy">PestXNet: An Explainable Multi-Task Framework with GBDT and Incremental Learning for Agricultural Pest Classification</h4>
+                            <p class="text-sm text-gray-600 italic mb-1">ICMETE 2025</p>
+                            <p class="text-sm text-gray-700">Achieves 99.40% accuracy using ResNet-50. Assesses infestation severity directly from Grad-CAM activation maps with SHAP-based feature attribution.</p>
                         </li>
-                        <li class="flex items-start">
-                            <i class="fa-solid fa-file-lines text-gsuRed mt-1 mr-3"></i>
-                            <div>
-                                <p class="text-sm font-semibold text-gray-800">[Placeholder Title: Explainable AI frameworks for EHR]</p>
-                                <p class="text-xs text-gray-500">Cruz, M.V. <span class="italic text-gsuBlue">IEEE Transactions on Medical Imaging</span>, 2023.</p>
-                            </div>
+                        <li>
+                            <h4 class="font-bold text-gsuNavy">Real-Time Ambulance Priority in Traffic: A YOLO-based Deep Learning Model</h4>
+                            <p class="text-sm text-gray-600 italic mb-1">ICMETE 2025</p>
+                            <p class="text-sm text-gray-700">Achieved 95% accuracy for emergency vehicle segmentation to prioritize routing and improve patient outcomes.</p>
                         </li>
-                        <li class="flex items-start">
-                            <i class="fa-solid fa-file-lines text-gsuRed mt-1 mr-3"></i>
-                            <div>
-                                <p class="text-sm font-semibold text-gray-800">[Placeholder Title: Survival modeling in integrative oncology]</p>
-                                <p class="text-xs text-gray-500">Cruz, M.V., Gemini. <span class="italic text-gsuBlue">Elsevier Health Informatics</span>, 2022.</p>
-                            </div>
+                        <li>
+                            <h4 class="font-bold text-gsuNavy">Revisiting Cervical Cancer Risk Prediction: A Systematic Review and Leakage-Aware Benchmarking Study</h4>
+                            <p class="text-sm text-gray-600 italic mb-1">AIRC 2026</p>
+                            <p class="text-sm text-gray-700">Reveals evaluation inconsistencies and procedural shortcuts, emphasizing standardized, leakage-controlled evaluation.</p>
+                        </li>
+                        <li>
+                            <h4 class="font-bold text-gsuNavy">CTFN: A Hybrid CNN-Transformer Fusion Network with Explainability and Uncertainty Estimation</h4>
+                            <p class="text-sm text-gray-600 italic mb-1">Journal of Soft Computing and Data Mining (JSCDM)</p>
+                            <p class="text-sm text-gray-700">Peak test accuracy of 99.11% on LC25000 dataset, integrating Grad-CAM, occlusion sensitivity, and uncertainty estimation.</p>
                         </li>
                     </ul>
                 </div>
 
-                <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-gsuRed">
-                    <h3 class="text-xl font-bold text-gray-900 mb-6 flex items-center">
-                        <i class="fa-solid fa-pen-nib mr-3 text-gsuRed"></i> In Pipeline
-                    </h3>
+                <div class="bg-white rounded-xl shadow p-8 border-l-4 border-orange-500">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 border-b pb-2">Submitted (Under Review)</h3>
                     <ul class="space-y-4">
-                        <li class="flex items-start">
-                            <i class="fa-solid fa-book text-gsuBlue mt-1 mr-3"></i>
-                            <div>
-                                <p class="text-sm font-semibold text-gray-800">Explainable AI (XAI) in Clinical Practice</p>
-                                <p class="text-xs text-gray-500">Book Project. <span class="italic font-medium">Under contract with River Publishers</span>.</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fa-solid fa-microscope text-gsuBlue mt-1 mr-3"></i>
-                            <div>
-                                <p class="text-sm font-semibold text-gray-800">Methodological Advancements in Retinal AI Deployment</p>
-                                <p class="text-xs text-gray-500">Journal Article. <span class="italic font-medium">In preparation</span>.</p>
-                            </div>
-                        </li>
+                        <li><span class="font-semibold text-gray-800">Multimodal Emotion Recognition via EEG and Facial Expressions: A Pipeline-Centric Review</span> <span class="text-xs text-gray-500">(JSCDM)</span></li>
+                        <li><span class="font-semibold text-gray-800">Quantum Tuned Hybrid CNN-SVM for New-born Chick Gender Classification and Detection</span> <span class="text-xs text-gray-500">(ICDSBS-2026)</span></li>
+                        <li><span class="font-semibold text-gray-800">An Explainable Two‐Stage Machine Learning and Survival Analysis Framework for Cirrhosis Prognostication</span> <span class="text-xs text-gray-500">(CIBM)</span></li>
+                        <li><span class="font-semibold text-gray-800">Machine Translation as a Patient Safety Intervention: A Quality Evaluation of Tamil and Hindi</span> <span class="text-xs text-gray-500">(Journal of Healthcare Quality and Research)</span></li>
+                        <li><span class="font-semibold text-gray-800">Neurophysiological EEG Signatures in ASD and ADHD: A Comparative Review of Clinical Markers</span></li>
+                        <li><span class="font-semibold text-gray-800">Advancing Cancer Prognosis through Biomarker Integration and ML-Based Survival Modeling</span> <span class="text-xs text-gray-500">(BMJ Health & Informatics)</span></li>
                     </ul>
+                </div>
+
+                <div class="bg-gsuNavy text-white rounded-xl shadow p-8 border-l-4 border-gsuGold">
+                    <h3 class="text-xl font-bold mb-2 flex items-center">
+                        <i class="fa-solid fa-book-open mr-3 text-gsuGold"></i> Upcoming Book Release
+                    </h3>
+                    <h4 class="text-lg font-semibold text-gsuGold">"Explainable AI in Healthcare: From Black Box to Bedside"</h4>
+                    <p class="text-sm text-gray-300 mt-2">Authored book in production with <span class="font-semibold">River Publishers</span>. Final manuscripts completed March 2026.</p>
                 </div>
             </div>
         </div>
@@ -220,32 +255,46 @@
     <section id="funding" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gsuBlue uppercase tracking-wide">Funding & Support</h2>
-                <div class="h-1 w-20 bg-gsuRed mx-auto mt-4 rounded"></div>
+                <h2 class="text-3xl font-bold text-gsuNavy uppercase tracking-wide">Grant Roadmap & Funding Strategy</h2>
+                <div class="h-1 w-20 bg-gsuGold mx-auto mt-4 rounded"></div>
             </div>
 
             <div class="max-w-4xl mx-auto">
                 <div class="bg-blue-50 rounded-xl p-8 border border-blue-100 shadow-sm relative overflow-hidden">
-                    <i class="fa-solid fa-sack-dollar absolute -right-10 -bottom-10 text-9xl text-blue-100 opacity-50 z-0"></i>
+                    <i class="fa-solid fa-file-invoice-dollar absolute -right-10 -bottom-10 text-9xl text-blue-100 opacity-50 z-0"></i>
                     
                     <div class="relative z-10">
-                        <div class="mb-8">
-                            <h3 class="text-xl font-bold text-gsuBlue border-b-2 border-gray-200 pb-2 mb-4">Present & Past Support</h3>
-                            <ul class="list-disc list-inside text-gray-700 space-y-2">
-                                <li>Georgia State University Internal Research Grant (2023-2024)</li>
-                                <li>[Placeholder for additional university-level or seed funding]</li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <h3 class="text-xl font-bold text-gsuBlue border-b-2 border-gray-200 pb-2 mb-4">Future Roadmap</h3>
-                            <div class="flex items-center bg-white p-4 rounded-lg shadow-sm border border-gsuRed/20">
-                                <div class="bg-gsuRed text-white p-3 rounded-full mr-4">
-                                    <i class="fa-solid fa-rocket"></i>
+                        <div class="space-y-6">
+                            <div class="flex items-start bg-white p-5 rounded-lg shadow-sm border border-gray-100">
+                                <div class="bg-gsuNavy text-white p-3 rounded-full mr-4 flex-shrink-0">
+                                    <i class="fa-solid fa-hands-holding-circle"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold text-gray-900">2028 NSF Smart Health Proposal</h4>
-                                    <p class="text-sm text-gray-600">The lab is actively generating preliminary data and establishing clinical partnerships in preparation for a major submission to the National Science Foundation's Smart Health and Biomedical Research in the Era of Artificial Intelligence and Advanced Data Science program.</p>
+                                    <h4 class="font-bold text-gray-900 text-lg">NSF Smart Health Proposal</h4>
+                                    <p class="text-xs text-gsuGold font-bold uppercase tracking-wider mb-2">Target: July 2026</p>
+                                    <p class="text-sm text-gray-600">Connecting the neurodevelopment and integrative oncology pillars into a cohesive, privacy-aware clinical deployment framework.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start bg-white p-5 rounded-lg shadow-sm border border-gray-100">
+                                <div class="bg-gsuNavy text-white p-3 rounded-full mr-4 flex-shrink-0">
+                                    <i class="fa-solid fa-eye"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900 text-lg">Major Ocular Disease Grant</h4>
+                                    <p class="text-xs text-gsuGold font-bold uppercase tracking-wider mb-2">Target: Mid-2027</p>
+                                    <p class="text-sm text-gray-600">Leveraging published proof-of-concepts and collected hybrid architecture data to secure high-access grants for scaling the Ocular Disease Recognition System.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start bg-white p-5 rounded-lg shadow-sm border border-gsuGold">
+                                <div class="bg-gsuGold text-white p-3 rounded-full mr-4 flex-shrink-0">
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900 text-lg">NSF Miracle Grant</h4>
+                                    <p class="text-xs text-gsuGold font-bold uppercase tracking-wider mb-2">Target: Early/Mid-2028</p>
+                                    <p class="text-sm text-gray-600">A large-scale proposal built directly upon our lab's foundational metabolic and psychological prognostic AI models.</p>
                                 </div>
                             </div>
                         </div>
@@ -255,42 +304,38 @@
         </div>
     </section>
 
-    <footer class="bg-gray-900 text-white pt-12 pb-6 border-t-8 border-gsuBlue">
+    <footer class="bg-gray-900 text-white pt-12 pb-6 border-t-8 border-gsuGold">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
                 <div>
                     <h3 class="text-xl font-bold mb-4 flex items-center">
-                        <i class="fa-solid fa-brain mr-2 text-gsuRed"></i> AICD Lab
+                        <i class="fa-solid fa-network-wired mr-2 text-gsuGold"></i> LNSC Lab
                     </h3>
                     <p class="text-gray-400 text-sm">
                         Bridging AI theory with clinical bedside deployment.
                     </p>
                 </div>
                 <div>
-                    <h3 class="text-lg font-semibold mb-4 text-gray-200">Contact</h3>
+                    <h3 class="text-lg font-semibold mb-4 text-gray-200">Affiliation</h3>
                     <p class="text-gray-400 text-sm flex items-center mb-2">
-                        <i class="fa-solid fa-envelope mr-2"></i> mcruz@gsu.edu </p>
-                    <p class="text-gray-400 text-sm flex items-center">
-                        <i class="fa-solid fa-location-dot mr-2"></i> Georgia State University, Atlanta, GA
+                        <i class="fa-solid fa-university mr-2 text-gsuGold"></i> Georgia Southern University
                     </p>
                 </div>
                 <div>
-                    <h3 class="text-lg font-semibold mb-4 text-gray-200">Quick Links</h3>
+                    <h3 class="text-lg font-semibold mb-4 text-gray-200">Connect</h3>
                     <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="https://www.gsu.edu" target="_blank" class="hover:text-white transition">Georgia State University</a></li>
-                        <li><a href="#" class="hover:text-white transition">Lab GitHub Repository</a></li>
-                        <li><a href="#" class="hover:text-white transition">Join the Lab</a></li>
+                        <li><a href="https://www.georgiasouthern.edu/" target="_blank" class="hover:text-white transition">Georgia Southern University</a></li>
+                        <li><a href="https://github.com/Akshaybhuvaneswariramakrishnan/aicd-lab-website" class="hover:text-white transition">Lab GitHub Repository</a></li>
                     </ul>
                 </div>
             </div>
             
             <div class="border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center">
                 <p class="text-gray-500 text-xs text-center md:text-left mb-4 md:mb-0">
-                    &copy; 2026 AI for Clinical Deployment Lab. All rights reserved. <br>
-                    <span class="font-semibold text-gray-400">Georgia State University</span>
+                    &copy; 2026 Laboratory of Neural and Somatic Computing. All rights reserved.
                 </p>
                 <p class="text-gray-500 text-xs">
-                    Designed & Developed by <span class="text-gsuRed font-semibold">Gemini</span>
+                    Developed by <span class="text-gsuGold font-semibold">Akshay Bhuvaneswari Ramakrishnan</span>
                 </p>
             </div>
         </div>
