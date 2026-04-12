@@ -33,7 +33,7 @@
                 </div>
             </div>
             <div class="mt-20 mx-20">
-                <h3 class="text-2xl font-bold text-gsuNavy mb-8 border-b-2 border-gray-200 pb-2">Graduate Students</h3>
+                <h3 class="text-2xl font-bold text-gsuNavy mb-8 border-b-2 border-gray-200 pb-2" id="graduates-title">Graduate Students</h3>
 
                 <div class="w-full flex justify-center">
                     <div class="max-w-7xl flex flex-wrap gap-[20px]" id="graduates-cont">
@@ -65,6 +65,8 @@
     <div id="footer-insert"></div>
 
     <script>
+        const MERGE_GRAD_AND_UNDERGRAD_SECTIONS = true;
+
         const people = [
             {
                 type: "investigator",
@@ -95,7 +97,7 @@
             {
                 type: "graduate",
                 name: "Nitish Kumar",
-                imageUrl: "images/people/placeholder.png",
+                imageUrl: "images/people/nitish-kuma.png",
                 description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur unde mollitia molestiae in impedit temporibus ab laudantium corporis maxime est nihil dolor fuga optio possimus, rem, cum velit at sequi?"
             },
             // {
@@ -115,13 +117,20 @@
         const undergradsCont = document.querySelector("#undergraduates-cont");
         const formersCont = document.querySelector("#formers-cont");
 
-        const graduates = people.filter((p) => p.type == "graduate");
-        const ungraduates = people.filter((p) => p.type == "undergraduate");
         const formers = people.filter((p) => p.type == "former");
-
-        if (graduates.length == 0) gradsCont.parentElement.parentElement.remove();
-        if (ungraduates.length == 0) undergradsCont.parentElement.parentElement.remove();
         if (formers.length == 0) formersCont.parentElement.parentElement.remove();
+
+        // NOTE: The "Graduates" section becomes the "Research Associates" section when MERGE_GRAD_AND_UNDERGRAD_SECTIONS is true
+        if (MERGE_GRAD_AND_UNDERGRAD_SECTIONS) {
+            undergradsCont.parentElement.parentElement.remove();
+            document.querySelector("#graduates-title").innerText = "Research Associates";
+        } else {
+            const graduates = people.filter((p) => p.type == "graduate");
+            const ungraduates = people.filter((p) => p.type == "undergraduate");
+
+            if (graduates.length == 0) gradsCont.parentElement.parentElement.remove();
+            if (ungraduates.length == 0) undergradsCont.parentElement.parentElement.remove();
+        }
 
         for (const person of people) {
 
@@ -175,13 +184,13 @@
     </div >
 </div >                    
 `;
-                    if (person.type == "undergraduate") undergradsCont.innerHTML += code;
-                    else if (person.type == "graduate") gradsCont.innerHTML += code;
+                    if (person.type == "graduate" || MERGE_GRAD_AND_UNDERGRAD_SECTIONS) gradsCont.innerHTML += code;
+                    else if (person.type == "undergraduate") undergradsCont.innerHTML += code;
                     break;
                 case "former":
                     formersCont.innerHTML += `
 <div class="bg-white min-w-[250px] px-6 py-4 rounded-xl text-center">
-    <p>${person.name}</p>
+    <p class="font-bold">${person.name}</p>
 </div>                    
 `;
             }
