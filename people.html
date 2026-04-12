@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laboratory of Neural and Somatic Computing (LNSC) | Georgia Southern University</title>
+    <title>Laboratory of Somatic Artificial Intelligence (SAI) | Georgia Southern University</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="tailwind-config.js"></script>
@@ -25,11 +25,29 @@
         <section id="people" class="pt-10 pb-20 bg-gray-50">
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-8">
-                    <h2 class="text-3xl font-bold text-gsuNavy uppercase tracking-wide">Our People</h2>
+                    <h2 class="text-3xl font-bold text-gsuNavy uppercase tracking-wide">Investigators</h2>
                     <div class="h-1 w-20 bg-gsuGold mx-auto mt-4 rounded"></div>
                 </div>
-                <div class="space-y-12" id="peopleCont">
+                <div class="space-y-12" id="investigators-cont">
                     <!-- There is JavaScript that puts code here. Do not remove this <div> -->
+                </div>
+            </div>
+            <div class="mt-20 mx-20">
+                <h3 class="text-2xl font-bold text-gsuNavy mb-8 border-b-2 border-gray-200 pb-2">Graduate Students</h3>
+
+                <div class="w-full flex justify-center">
+                    <div class="max-w-7xl flex flex-wrap gap-[20px]" id="graduates-cont">
+                        <!-- There is JavaScript that puts code here. Do not remove this <div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="mt-20 mx-20">
+                <h3 class="text-2xl font-bold text-gsuNavy mb-8 border-b-2 border-gray-200 pb-2">Undergraduate Students</h3>
+
+                <div class="w-full flex justify-center">
+                    <div class="max-w-7xl flex flex-wrap gap-[20px]" id="undergraduates-cont">
+                        <!-- There is JavaScript that puts code here. Do not remove this <div> -->
+                    </div>
                 </div>
             </div>
         </section>
@@ -40,40 +58,62 @@
     <script>
         const people = [
             {
+                type: "investigator",
                 role: "Principal Investigator",
                 name: "Dr. Meenalosini Vimal Cruz",
                 title: "Associate Professor",
                 imageUrl: "images/people/meena.jpg",
                 links: [
-                    { icon: '<i class="fa-brands fa-github"></i>', role: "GitHub", link: "" },
-                    { icon: '<i class="fa-brands fa-linkedin"></i>', role: "LinkedIn", link: "" },
-                    { icon: '<i class="fa-solid fa-graduation-cap"></i>', role: "Google Scholar", link: "" },
+                    { icon: '<i class="fa-brands fa-github"></i>', role: "GitHub", link: "https://github.com/meenalosinivimalcruz" },
+                    { icon: '<i class="fa-brands fa-linkedin"></i>', role: "LinkedIn", link: "https://www.linkedin.com/in/meena-vimal-cruz" },
+                    { icon: '<i class="fa-solid fa-graduation-cap"></i>', role: "Google Scholar", link: "https://scholar.google.com/citations?user=QmiqNjcAAAAJ&hl=en" },
                 ],
-                description: "Dr. Cruz directs the Laboratory of Neural and Somatic Computing (LNSC), focusing on translational AI in medicine. Her research explores interpretable deep learning architectures, multimodal emotion recognition, and equitable clinical decision support systems.\n\nShe leads multiple high-impact projects bridging neurodevelopmental informatics with integrative oncology, prioritizing frameworks that offer real-world transparency and trust for clinical practitioners."
+                description: "Dr. Cruz directs the Laboratory of Somantic Artificial Intelligence (SAI), focusing on translational AI in medicine. Her research explores interpretable deep learning architectures, multimodal emotion recognition, and equitable clinical decision support systems.\n\nShe leads multiple high-impact projects bridging neurodevelopmental informatics with integrative oncology, prioritizing frameworks that offer real-world transparency and trust for clinical practitioners."
             },
             {
+                type: "investigator",
                 role: "Co-Principal Investigator",
                 name: "Akshay Bhuvaneswari Ramakrishnan",
                 title: "Presidential Research Fellow",
                 imageUrl: "images/people/akshay.jpg",
                 links: [
-                    { icon: '<i class="fa-brands fa-github"></i>', role: "GitHub", link: "" },
-                    { icon: '<i class="fa-brands fa-linkedin"></i>', role: "LinkedIn", link: "" },
-                    { icon: '<i class="fa-solid fa-graduation-cap"></i>', role: "Google Scholar", link: "" },
+                    { icon: '<i class="fa-brands fa-github"></i>', role: "GitHub", link: "https://github.com/AkshayBRamki" },
+                    { icon: '<i class="fa-brands fa-linkedin"></i>', role: "LinkedIn", link: "https://www.linkedin.com/in/akshay-bhuvaneswari-ramakrishnan-0a9286199/" },
+                    { icon: '<i class="fa-solid fa-graduation-cap"></i>', role: "Google Scholar", link: "https://scholar.google.com/citations?user=EUVHa0sAAAAJ&hl=en" },
                 ],
                 description: "Akshay specializes in machine learning, data engineering, and medical artificial intelligence applications. He focuses on the architectural design of complex deep learning systems, including the integration of classical signal processing with self-supervised learning.\n\nHis recent work drives the technical development of ocular disease recognition frameworks, advanced survival modeling in integrative oncology, and the optimization of training pipelines for deployment in resource-limited clinical environments."
-            }
-        ]
+            },
+            {
+                type: "graduate", // or "undergraduate"
+                name: "Nitish Kumar",
+                imageUrl: "images/people/placeholder.png",
+                description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur unde mollitia molestiae in impedit temporibus ab laudantium corporis maxime est nihil dolor fuga optio possimus, rem, cum velit at sequi?"
+            },
+        ];
 
-        const peopleCont = document.querySelector("#peopleCont");
+        const investigatorsCont = document.querySelector("#investigators-cont");
+        const gradsCont = document.querySelector("#graduates-cont");
+        const undergradsCont = document.querySelector("#undergraduates-cont");
+
+        const graduates = people.filter((p) => p.type == "graduate");
+        const ungraduates = people.filter((p) => p.type == "undergraduate");
+
+        if (graduates.length == 0) gradsCont.parentElement.parentElement.remove();
+        if (ungraduates.length == 0) undergradsCont.parentElement.parentElement.remove();
+
         for (const person of people) {
 
             let links = "";
-            for (const link of person.links) {
-                links += `<a href="${link.link}" title="${link.role}" class="text-gray-400 hover:text-gsuNavy transition">${link.icon}</a>`;
+
+            if (person.type == "investigator" && person.links != null && person.links.length > 0) {
+                for (const link of person.links) {
+                    links += `<a href="${link.link}" title="${link.role}" target="_blank" class="text-gray-400 hover:text-gsuNavy transition">${link.icon}</a>`;
+                }
             }
 
-            peopleCont.innerHTML += `
+            switch (person.type) {
+                case "investigator":
+                    investigatorsCont.innerHTML += `
 <div class="bg-white rounded-xl shadow-lg border-l-4 border-gsuNavy p-8">
     <h3 class="text-2xl font-bold text-gsuNavy mb-6 border-b border-gray-100 pb-4 uppercase tracking-wide">
         ${person.role}
@@ -97,6 +137,26 @@
     </div>
 </div>
 `;
+                    break;
+                case "graduate":
+                case "undergraduate":
+                    const code = `
+<div class="group w-[275px] h-[300px] bg-white rounded-xl shadow-md hover:shadow-lg transition-all">
+    <div class="relative w-full h-[250px] flex justify-center items-center">
+        <img src="${person.imageUrl}" alt="${person.name}" class="w-4/5 rounded-full">
+        <div class="absolute inset-0 bg-gsuNavy/95 opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex items-center justify-center text-center rounded-t-xl">
+            <p class="text-white text-sm">${person.description || "A wonderful student researcher working on the next great thing at SAI Lab."}</p>
+        </div>
+    </div>
+    <div class="w-full h-[50px] flex flex-col items-center justify-center border-gsuNavy border-t-2">
+        <p class="font-bold text-black text-2xl">${person.name}</p>
+    </div >
+</div >                    
+`;
+                    if (person.type == "undergraduate") undergradsCont.innerHTML += code;
+                    else if (person.type == "graduate") gradsCont.innerHTML += code;
+                    break;
+            }
         }
     </script>
 
