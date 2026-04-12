@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratory of Neural and Somatic Computing (LNSC) | Georgia Southern University</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind-config.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="global.css">
+
+    <script src="components/load-nav-footer.js" type="module" defer></script>
+</head>
+
+<body class="bg-gray-50 text-gray-800 antialiased selection:bg-gsuGold selection:text-gsuNavy">
+
+    <div class="w-screen min-h-screen">
+        <div id="nav-insert"></div>
+        <section id="publications" class="pt-10 pb-20 bg-gray-50 border-t border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gsuNavy uppercase tracking-wide">Publications</h2>
+                    <div class="h-1 w-20 bg-gsuGold mx-auto mt-4 rounded"></div>
+                </div>
+                <div class="space-y-8">
+                    <div class="bg-white rounded-xl shadow p-8 border-l-4 border-green-600" id="published-cont">
+                        <h3 class="text-xl font-bold text-gray-900 mb-4 border-b pb-2">Published</h3>
+                        <!-- Code is placed here from JavaScript -->
+                    </div>
+                    <div class="bg-white rounded-xl shadow p-8 border-l-4 border-blue-600">
+                        <h3 class="text-xl font-bold text-gray-900 mb-4 border-b pb-2">Accepted & In Production</h3>
+                        <ul class="space-y-6" id="accepted-cont">
+                            <!-- Code is placed here from JavaScript -->
+                        </ul>
+                    </div>
+                    <div class="bg-white rounded-xl shadow p-8 border-l-4 border-orange-500">
+                        <h3 class="text-xl font-bold text-gray-900 mb-4 border-b pb-2">Submitted (Under Review)</h3>
+                        <ul class="space-y-4" id="submitted-cont">
+                            <!-- Code is placed here from JavaScript -->
+                        </ul>
+                    </div>
+                    <div class="bg-gsuNavy text-white rounded-xl shadow p-8 border-l-4 border-gsuGold">
+                        <h3 class="text-xl font-bold mb-2 flex items-center">
+                            <i class="fa-solid fa-book-open mr-3 text-gsuGold"></i> Upcoming Book Release
+                        </h3>
+                        <h4 class="text-lg font-semibold text-gsuGold">"Explainable AI in Healthcare: From Black Box to
+                            Bedside"</h4>
+                        <p class="text-sm text-gray-300 mt-2">Authored book in production with <span class="font-semibold">River Publishers</span>. Final manuscripts completed March 2026.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="footer-insert"></div>
+
+    <script>
+        const articles = [
+            // PUBLISHED
+            {
+                type: "published",
+                title: "A Unified Framework for Chest CT Image Classification: Benchmarking Pre-Trained Architectures with Lightweight and Deep Models",
+                journal: "2025 6th International Conference on Artificial Intelligence, Robotics and Control (AIRC)",
+                date: "May 2026",
+                description: null,
+                highlights: [
+                    { title: "Clinical Innovation", description: "Utilizes Grad-CAM for visual interpretability, allowing clinicians to see specific regions driving lung cancer classification." },
+                ]
+            },
+
+            // ACCEPTED & IN-PRODUCTION
+            {
+                type: "accepted",
+                title: "PestXNet: An Explainable Multi-Task Framework with GBDT and Incremental Learning for Agricultural Pest Classification",
+                journal: "ICMETE 2025",
+                date: null,
+                description: "Achieves 99.40% accuracy using ResNet-50. Assesses infestation severity directly from Grad-CAM activation maps with SHAP-based feature attribution.",
+                highlights: null
+            },
+            {
+                type: "accepted",
+                title: "Real-Time Ambulance Priority in Traffic: A YOLO-based Deep Learning Model",
+                journal: "ICMETE 2025",
+                date: null,
+                description: "Achieved 95% accuracy for emergency vehicle segmentation to prioritize routing and improve patient outcomes.",
+                highlights: null
+            },
+            {
+                type: "accepted",
+                title: "Revisiting Cervical Cancer Risk Prediction: A Systematic Review and Leakage-Aware Benchmarking Study",
+                journal: "AIRC 2026",
+                date: null,
+                description: "Reveals evaluation inconsistencies and procedural shortcuts, emphasizing standardized, leakage-controlled evaluation.",
+                highlights: null
+            },
+            {
+                type: "accepted",
+                title: "CTFN: A Hybrid CNN-Transformer Fusion Network with Explainability and Uncertainty Estimation",
+                journal: "Journal of Soft Computing and Data Mining (JSCDM)",
+                date: null,
+                description: "Peak test accuracy of 99.11% on LC25000 dataset, integrating Grad-CAM, occlusion sensitivity, and uncertainty estimation.",
+                highlights: null
+            },
+
+            // SUBMITTED (UNDER REVIEW)
+            {
+                type: "submitted",
+                title: "Multimodal Emotion Recognition via EEG and Facial Expressions: A Pipeline-Centric Review",
+                journal: "JSCDM",
+                date: null,
+                description: null,
+                highlights: null
+            },
+            {
+                type: "submitted",
+                title: "Quantum Tuned Hybrid CNN-SVM for New-born Chick Gender Classification and Detection",
+                journal: "ICDSBS-2026",
+                date: null,
+                description: null,
+                highlights: null
+            },
+            {
+                type: "submitted",
+                title: "An Explainable Two‐Stage Machine Learning and Survival Analysis Framework for Cirrhosis Prognostication",
+                journal: "CIBM",
+                date: null,
+                description: null,
+                highlights: null
+            },
+            {
+                type: "submitted",
+                title: "Machine Translation as a Patient Safety Intervention: A Quality Evaluation of Tamil and Hindi",
+                journal: "Journal of Healthcare Quality and Research",
+                date: null,
+                description: null,
+                highlights: null
+            },
+            {
+                type: "submitted",
+                title: "Neurophysiological EEG Signatures in ASD and ADHD: A Comparative Review of Clinical Markers",
+                journal: null,
+                date: null,
+                description: null,
+                highlights: null
+            },
+            {
+                type: "submitted",
+                title: "Advancing Cancer Prognosis through Biomarker Integration and ML-Based Survival Modeling",
+                journal: "BMJ Health & Informatics",
+                date: null,
+                description: null,
+                highlights: null
+            }
+        ]
+
+        const publishedCont = document.querySelector("#published-cont");
+        const acceptedCont = document.querySelector("#accepted-cont");
+        const submittedCont = document.querySelector("#submitted-cont");
+
+        for (const article of articles) {
+            let highlights = "";
+            if (article.type == "published" && article.highlights != null) {
+                for (const highlight of article.highlights) {
+                    highlights += `
+<p class="text-sm text-gray-700">
+    <span class="font-semibold text-gsuGold">${highlight.title}:</span>
+    ${highlight.description}
+</p>
+`;
+                }
+            }
+
+            switch (article.type) {
+                case "published":
+                    publishedCont.innerHTML += `
+<div class="mb-4">
+    <h4 class="font-bold text-gsuNavy">A Unified Framework for Chest CT Image Classification:
+        Benchmarking Pre-Trained Architectures with Lightweight and Deep Models</h4>
+    <p class="text-sm text-gray-600 italic mb-1">2025 6th International Conference on Artificial
+        Intelligence, Robotics and Control (AIRC) | May 2025</p>
+    ${highlights}
+</div>
+`;
+                    break;
+                case "accepted":
+                    acceptedCont.innerHTML += `
+<li>
+    <h4 class="font-bold text-gsuNavy">${article.title}</h4>
+    <p class="text-sm text-gray-600 italic mb-1">${article.journal}</p>
+    ${useIfNotNull(article.description, "<p class=\"text-sm text-gray-700\">" + article.description + "</p>", "")}
+</li>
+`;
+                    break;
+                case "submitted":
+                    submittedCont.innerHTML += `
+<li>
+    <span class="font-semibold text-gray-800">${article.title}</span>
+    ${useIfNotNull(article.description, "<span class=\"text-xs text-gray-500\">" + article.description + "</span>", "")}
+</li>                    
+`;
+            }
+        }
+
+        function useIfNotNull(valueToCheck, returnValue, fallback) {
+            if (valueToCheck == null || valueToCheck == undefined) return fallback || "";
+            return returnValue;
+        }
+    </script>
+
+</body>
+
+</html>
