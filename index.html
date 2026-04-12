@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laboratory of Somatic Artificial Intelligence (SAI) | Georgia Southern University</title>
+    <title>Somatic Artificial Intelligence Laboratory (SAIL) | Georgia Southern University</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="tailwind-config.js"></script>
@@ -18,28 +18,31 @@
     <script src="components/load-nav-footer.js" type="module" defer></script>
 </head>
 
-<body class="bg-gray-50 text-gray-800 antialiased selection:bg-gsuGold selection:text-gsuNavy">
+<body class="bg-gray-100 text-gray-800 antialiased selection:bg-gsuGold selection:text-gsuNavy">
 
     <div class="w-screen min-h-screen">
         <div id="nav-insert"></div>
 
-        <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden border-b-8 border-gsuGold">
+        <section id="home" class="relative h-[calc(100vh-50px)] flex items-center justify-center overflow-hidden border-b-8 border-gsuGold">
             <div class="absolute inset-0 w-full h-full bg-gsuNavy z-0">
                 <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover opacity-40">
-                    <source src="" type="video/mp4">
-                    Your browser does not support the video tag.
+                    <source src="images/homepage/hero-video.mp4" type="video/mp4">
+                    <!-- Your browser does not support the video tag. -->
                 </video>
                 <div class="absolute inset-0 bg-gradient-to-r from-gsuNavy via-gsuNavy/80 to-transparent"></div>
             </div>
 
             <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
                 <div class="max-w-4xl">
+                    <div class="flex flex-row items-center mb-[-30px]">
+                        <img src="images/branding/logo-transparent.png" alt="Lab Logo" class="w-[300px]">
+                    </div>
                     <h2 class="text-gsuGold font-bold tracking-widest uppercase mb-4 text-sm md:text-base border-l-4 border-gsuGold pl-3">
                         Georgia Southern University
                     </h2>
-                    <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight">
-                        Laboratory of Somatic <br>
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">Artificial Intelligence</span>
+                    <h1 class="text-5xl md:text-7xl mb-5 font-extrabold text-white leading-tight">
+                        Somatic Artificial <br>
+                        Intelligence Laboratory
                     </h1>
                     <p class="text-xl md:text-2xl text-gray-200 mb-10 font-light max-w-2xl border-l-4 border-gsuGold pl-4">
                         Translating high-dimensional biological signals and black-box theory into interpretable, clinical bedside deployments.
@@ -56,7 +59,7 @@
             </div>
         </section>
 
-        <section class="py-24 bg-white overflow-hidden">
+        <section class="py-24 overflow-hidden bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex flex-col lg:flex-row items-center gap-16">
                     <div class="lg:w-1/2">
@@ -77,14 +80,14 @@
             </div>
         </section>
 
-        <section class="py-24 bg-gray-50 overflow-hidden border-y border-gray-200">
+        <section class="py-24 overflow-hidden border-y border-gray-200">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex flex-col lg:flex-row-reverse items-center gap-16">
                     <div class="lg:w-1/2">
                         <h3 class="text-gsuGold font-bold uppercase tracking-wider mb-2">Defining Innovations</h3>
                         <h2 class="text-3xl md:text-4xl font-extrabold text-gsuNavy mb-6">Real-World Somatic Data Acquisition</h2>
                         <p class="text-lg text-gray-600 mb-6 leading-relaxed">
-                            True AI innovation requires pristine, real-world data. The SAI Lab utilizes advanced biometric imaging, extremely high frequency (EHF) bioresonance, and wireless EEG systems to capture dynamic cognitive states during active tasks.
+                            True AI innovation requires pristine, real-world data. The SAIL utilizes advanced biometric imaging, extremely high frequency (EHF) bioresonance, and wireless EEG systems to capture dynamic cognitive states during active tasks.
                         </p>
                         <p class="text-lg text-gray-600 leading-relaxed">
                             This hands-on data acquisition allows us to move beyond standard datasets, pioneering custom multimodal pipelines that fuse temporal signals with spatial phenotyping.
@@ -98,14 +101,14 @@
             </div>
         </section>
 
-        <section class="py-24 bg-white overflow-hidden">
+        <section class="py-24 overflow-hidden bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex flex-col lg:flex-row items-center gap-16">
                     <div class="lg:w-1/2">
                         <h3 class="text-gsuGold font-bold uppercase tracking-wider mb-2">Life at SAI</h3>
                         <h2 class="text-3xl md:text-4xl font-extrabold text-gsuNavy mb-6">A Collaborative Research Ecosystem</h2>
                         <p class="text-lg text-gray-600 mb-6 leading-relaxed">
-                            The SAI Lab is unique because we put computational modelers, data engineers, and translational medical researchers in the exact same room.
+                            The SAIL is unique because we put computational modelers, data engineers, and translational medical researchers in the exact same room.
                         </p>
                         <p class="text-lg text-gray-600 leading-relaxed">
                             We offer a vibrant, rigorous atmosphere where students and researchers collaborate directly on hardware calibration, algorithmic design, and data pipeline optimization. It is this culture of shared knowledge that drives our most significant breakthroughs.
@@ -126,7 +129,7 @@
                         <h3 class="text-gsuGold font-bold uppercase tracking-wider mb-2">Community Impact</h3>
                         <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-6">Inspiring the Next Generation</h2>
                         <p class="text-lg text-gray-300 mb-6 leading-relaxed">
-                            Our commitment extends beyond the university campus. The SAI Lab is deeply invested in STEM outreach, bringing the fundamentals of computer science, signal processing, and AI to younger students in our community.
+                            Our commitment extends beyond the university campus. The SAIL is deeply invested in STEM outreach, bringing the fundamentals of computer science, signal processing, and AI to younger students in our community.
                         </p>
                         <p class="text-lg text-gray-300 leading-relaxed">
                             By demystifying technology and providing hands-on mentorship, we aim to build a diverse and passionate pipeline of future innovators and engineers.

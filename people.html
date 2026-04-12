@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laboratory of Somatic Artificial Intelligence (SAI) | Georgia Southern University</title>
+    <title>Somatic Artificial Intelligence Laboratory (SAIL) | Georgia Southern University</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="tailwind-config.js"></script>
@@ -22,7 +22,7 @@
 
     <div class="w-screen min-h-screen">
         <div id="nav-insert"></div>
-        <section id="people" class="pt-10 pb-20 bg-gray-50">
+        <section id="people" class="pt-10 pb-20 bg-gray-100">
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-8">
                     <h2 class="text-3xl font-bold text-gsuNavy uppercase tracking-wide">Investigators</h2>
@@ -50,6 +50,15 @@
                     </div>
                 </div>
             </div>
+            <div class="mt-20 mx-20">
+                <h3 class="text-2xl font-bold text-gsuNavy mb-8 border-b-2 border-gray-200 pb-2">Former Students</h3>
+
+                <div class="w-full flex justify-center">
+                    <div class="max-w-7xl flex flex-wrap gap-[20px]" id="formers-cont">
+                        <!-- There is JavaScript that puts code here. Do not remove this <div> -->
+                    </div>
+                </div>
+            </div>
         </section>
     </div>
 
@@ -62,20 +71,20 @@
                 role: "Principal Investigator",
                 name: "Dr. Meenalosini Vimal Cruz",
                 title: "Associate Professor",
-                imageUrl: "images/people/meena.jpg",
+                imageUrl: "images/people/meenalosini-v-cruz.jpg",
                 links: [
                     { icon: '<i class="fa-brands fa-github"></i>', role: "GitHub", link: "https://github.com/meenalosinivimalcruz" },
                     { icon: '<i class="fa-brands fa-linkedin"></i>', role: "LinkedIn", link: "https://www.linkedin.com/in/meena-vimal-cruz" },
                     { icon: '<i class="fa-solid fa-graduation-cap"></i>', role: "Google Scholar", link: "https://scholar.google.com/citations?user=QmiqNjcAAAAJ&hl=en" },
                 ],
-                description: "Dr. Cruz directs the Laboratory of Somantic Artificial Intelligence (SAI), focusing on translational AI in medicine. Her research explores interpretable deep learning architectures, multimodal emotion recognition, and equitable clinical decision support systems.\n\nShe leads multiple high-impact projects bridging neurodevelopmental informatics with integrative oncology, prioritizing frameworks that offer real-world transparency and trust for clinical practitioners."
+                description: "Dr. Cruz directs the Somatic Artificial Intelligence Laboratory (SAIL), focusing on translational AI in medicine. Her research explores interpretable deep learning architectures, multimodal emotion recognition, and equitable clinical decision support systems.\n\nShe leads multiple high-impact projects bridging neurodevelopmental informatics with integrative oncology, prioritizing frameworks that offer real-world transparency and trust for clinical practitioners."
             },
             {
                 type: "investigator",
                 role: "Co-Principal Investigator",
                 name: "Akshay Bhuvaneswari Ramakrishnan",
                 title: "Presidential Research Fellow",
-                imageUrl: "images/people/akshay.jpg",
+                imageUrl: "images/people/akshay-b-rama.jpg",
                 links: [
                     { icon: '<i class="fa-brands fa-github"></i>', role: "GitHub", link: "https://github.com/AkshayBRamki" },
                     { icon: '<i class="fa-brands fa-linkedin"></i>', role: "LinkedIn", link: "https://www.linkedin.com/in/akshay-bhuvaneswari-ramakrishnan-0a9286199/" },
@@ -84,22 +93,35 @@
                 description: "Akshay specializes in machine learning, data engineering, and medical artificial intelligence applications. He focuses on the architectural design of complex deep learning systems, including the integration of classical signal processing with self-supervised learning.\n\nHis recent work drives the technical development of ocular disease recognition frameworks, advanced survival modeling in integrative oncology, and the optimization of training pipelines for deployment in resource-limited clinical environments."
             },
             {
-                type: "graduate", // or "undergraduate"
+                type: "graduate",
                 name: "Nitish Kumar",
                 imageUrl: "images/people/placeholder.png",
                 description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur unde mollitia molestiae in impedit temporibus ab laudantium corporis maxime est nihil dolor fuga optio possimus, rem, cum velit at sequi?"
             },
+            // {
+            //     type: "undergraduate",
+            //     name: "Temporary Card",
+            //     imageUrl: "images/people/placeholder.png",
+            //     description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur unde mollitia molestiae in impedit temporibus ab laudantium corporis maxime est nihil dolor fuga optio possimus, rem, cum velit at sequi?"
+            // },
+            // {
+            //     type: "former",
+            //     name: "Temporary Card",
+            // },
         ];
 
         const investigatorsCont = document.querySelector("#investigators-cont");
         const gradsCont = document.querySelector("#graduates-cont");
         const undergradsCont = document.querySelector("#undergraduates-cont");
+        const formersCont = document.querySelector("#formers-cont");
 
         const graduates = people.filter((p) => p.type == "graduate");
         const ungraduates = people.filter((p) => p.type == "undergraduate");
+        const formers = people.filter((p) => p.type == "former");
 
         if (graduates.length == 0) gradsCont.parentElement.parentElement.remove();
         if (ungraduates.length == 0) undergradsCont.parentElement.parentElement.remove();
+        if (formers.length == 0) formersCont.parentElement.parentElement.remove();
 
         for (const person of people) {
 
@@ -142,20 +164,26 @@
                 case "undergraduate":
                     const code = `
 <div class="group w-[275px] h-[300px] bg-white rounded-xl shadow-md hover:shadow-lg transition-all">
-    <div class="relative w-full h-[250px] flex justify-center items-center">
-        <img src="${person.imageUrl}" alt="${person.name}" class="w-4/5 rounded-full">
+    <div class="relative w-full h-[225px] flex justify-center items-center">
+        <img src="${person.imageUrl}" alt="${person.name}" class="h-4/5 rounded-full">
         <div class="absolute inset-0 bg-gsuNavy/95 opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex items-center justify-center text-center rounded-t-xl">
-            <p class="text-white text-sm">${person.description || "A wonderful student researcher working on the next great thing at SAI Lab."}</p>
+            <p class="text-white text-sm">${person.description || "A wonderful student researcher working on the next great thing at SAIL."}</p>
         </div>
     </div>
-    <div class="w-full h-[50px] flex flex-col items-center justify-center border-gsuNavy border-t-2">
-        <p class="font-bold text-black text-2xl">${person.name}</p>
+    <div class="w-full h-[75px] flex flex-col items-center justify-center border-gsuNavy border-t-2">
+        <p class="font-bold text-black text-xl text-center">${person.name}</p>
     </div >
 </div >                    
 `;
                     if (person.type == "undergraduate") undergradsCont.innerHTML += code;
                     else if (person.type == "graduate") gradsCont.innerHTML += code;
                     break;
+                case "former":
+                    formersCont.innerHTML += `
+<div class="bg-white min-w-[250px] px-6 py-4 rounded-xl text-center">
+    <p>${person.name}</p>
+</div>                    
+`;
             }
         }
     </script>
